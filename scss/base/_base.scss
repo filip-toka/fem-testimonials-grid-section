@@ -1,0 +1,27 @@
+@use "../abstracts/mixins" as *;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-light-grayish-blue);
+    margin: 0;
+    font-size: 13px;
+    height: 100vh;
+    font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.wrapper {
+    padding-inline: 2rem;
+    margin-block: 4rem; 
+}
+
+
+@include mediaQuery {
+    .wrapper {
+        margin-inline: auto;   
+        margin-block: 6rem;    
+        max-width: 1280px;
+    }
+}

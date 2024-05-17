@@ -1,0 +1,133 @@
+@use "sass:color";
+@use "../abstracts/mixins" as *;
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+    &__title {
+        color: var(--color-very-dark-grayish-blue);
+        font-size: 1.4rem;
+        text-wrap: balance;
+        margin-top: .6rem;
+    }
+
+    &__text {
+        color: rgba(hsl(217, 19%, 35%),.7);
+        line-height: 1.5;
+    }
+
+    &__author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &--avatar {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        &--name {
+            color: var(--color-very-dark-grayish-blue);
+            margin-bottom: .2rem;
+            font-weight: 600;
+        }
+
+        &--title {
+            color: rgba(hsl(217, 19%, 35%),.5);
+            margin: 0;
+        }
+    }
+
+    &.card--violet { 
+        background-color: var(--color-moderate-violet);
+        background-image: url(images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-position: top 0 right 20%;
+
+        .card__author {
+            &--avatar {
+                border: 2px solid rgba(hsl(0, 0%, 81%),.5);
+            }
+
+            &--name {
+                color: var(--color-light-gray);
+            }
+
+            &--title {
+                color: rgba(hsl(0, 0%, 81%),.5);
+            }
+        }
+
+        .card__title {
+            color: var(--color-light-grayish-blue);
+        }
+
+        .card__text {
+            color: rgba(hsl(0, 0%, 81%),.7);
+        }
+    }
+
+    &.card--grayish-blue { 
+        background-color: var(--color-very-dark-grayish-blue);
+
+        .card__author {
+            &--avatar {
+                border: 2px solid rgba(hsl(0, 0%, 81%),.5);
+            }
+
+            &--name {
+                color: var(--color-light-gray);
+            }
+
+            &--title {
+                color: rgba(hsl(0, 0%, 81%),.5);
+            }
+        }
+
+        .card__title {
+            color: white;
+        }
+
+        .card__text {
+            color: rgba(hsl(0, 0%, 81%),.7);
+        }
+    }
+
+    &.card--blackish-blue { 
+        background-color: var(--color-very-dark-blackish-blue);
+
+        .card__author {
+            &--avatar {
+                border: 2px solid rgba(hsl(263, 55%, 52%),.5);
+            }
+
+            &--name {
+                color: var(--color-light-gray);
+            }
+
+            &--title {
+                color: rgba(hsl(0, 0%, 81%),.5);
+            }
+        }
+
+        .card__title {
+            color: var(--color-light-gray);
+        }
+
+        .card__text {
+            color: rgba(hsl(0, 0%, 81%),.7);
+        }
+    }
+}
+
+@include mediaQuery {
+    .card {
+        &__text {
+            font-size: 16px;
+        }
+    }
+}
